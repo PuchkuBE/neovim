@@ -254,8 +254,8 @@ require("lazy").setup({
   -------------------------------------------------------------------
   {
     "echasnovski/mini.files",
-    version = false,   -- always use latest
-    lazy = false,      -- load at startup (fast enough)
+    version = false, -- always use latest
+    lazy = false,    -- load at startup (fast enough)
     config = function()
       require("mini.files").setup({
         mappings = {
@@ -304,8 +304,8 @@ require("lazy").setup({
 
   {
     "stevearc/oil.nvim",
-    version = false,   -- always use latest
-    lazy = false,      -- load at startup (fast enough)
+    version = false, -- always use latest
+    lazy = false,    -- load at startup (fast enough)
     config = function()
       require("oil").setup({
         -- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
@@ -551,5 +551,31 @@ require("lazy").setup({
         },
       })
     end,
+  },
+
+  -------------------------------------------------------------------
+  -- Git signs
+  -------------------------------------------------------------------
+
+  {
+    "NeogitOrg/neogit",
+    lazy = true,
+    dependencies = {
+      "nvim-lua/plenary.nvim", -- required
+
+      -- Only one of these is needed.
+      "sindrets/diffview.nvim", -- optional
+      --"esmuellert/codediff.nvim", -- optional
+
+      -- Only one of these is needed.
+      "nvim-telescope/telescope.nvim", -- optional
+      --"ibhagwan/fzf-lua",            -- optional
+      --"nvim-mini/mini.pick",         -- optional
+      --"folke/snacks.nvim",           -- optional
+    },
+    cmd = "Neogit",
+    keys = {
+      { "<leader>gg", "<cmd>Neogit<cr>", desc = "Show Neogit UI" }
+    }
   }
 })
