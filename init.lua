@@ -196,6 +196,7 @@ require("lazy").setup({
       vim.keymap.set("n", "<leader>sr", pickers.resume, { desc = "[S]earch [R]esume" })
       vim.keymap.set("n", "<leader>sh", pickers.help_tags, { desc = "[S]earch [H]elp" })
       vim.keymap.set("n", "<leader>sm", pickers.man_pages, { desc = "[S]earch [M]anuals" })
+      vim.keymap.set('n', '<leader>gb', pickers.git_branches, { desc = 'Search [G]it [B]ranches' })
     end,
   },
 
