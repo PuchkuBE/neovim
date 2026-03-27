@@ -1,5 +1,6 @@
 return {
   "saghen/blink.cmp",
+  enabled = false,
   event = "InsertEnter",
   config = function()
     require("blink.cmp").setup({
